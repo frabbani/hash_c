@@ -2,12 +2,14 @@
 
 #include <stdio.h>
 
-static hash_t hashpool[ HASH_TABLE_SIZE * 4 ];
+#define HASH_POOL_SIZE ( HASH_TABLE_SIZE *4 )
+
+static hash_t hashpool[ HASH_POOL_SIZE ];
 
 
 static hash_t *hashpool_new( int val ){
   static size_t index = 0;
-  index = (index+1) % HASH_TABLE_SIZE;
+  index = (index+1) % HASH_POOL_SIZE;
   hash_t *hash = &hashpool[index++];
   hash->val  = val;
   hash->next = NULL;
