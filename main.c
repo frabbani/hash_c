@@ -45,7 +45,7 @@ int main(){
 	hashmap_t map;
   hashmap_init( &map, maxval );
 
-	size_t  nvals = 33;
+	size_t  nvals = 32;
 	size_t *vals = malloc( nvals * sizeof(size_t) );
 
 	size_t total = 0;
